@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Awesome Seedream 5.5</title>
+  <meta name="description" content="社区整理的 Seedream 5.5 公开玩法与案例。点选一条，即可在右侧预览图片和来源中的提示词。">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://xianyu110.github.io/awesome-seedream-5.5/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #eef4f4;
+      --bg-card: #f7fcfc;
+      --ink: #10231f;
+      --muted: #4a5f5c;
+      --line: rgba(16,35,31,.12);
+      --accent: #0e7c7b;
+      --accent-2: #0b4f4e;
+      --shadow: 0 10px 30px rgba(16,35,31,.07);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background:
+        radial-gradient(1200px 500px at 10% -10%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 60%),
+        var(--bg);
+      color: var(--ink);
+      font-family: "Noto Sans SC", "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    a { color: var(--accent-2); }
+    a:hover { color: var(--accent); }
+    .wrap { width: min(1280px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 48px; }
+    .topnav {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 12px; margin-bottom: 22px; flex-wrap: wrap;
+    }
+    .brand {
+      font-family: "Source Serif 4", "Noto Sans SC", serif;
+      font-weight: 600; letter-spacing: -0.02em; font-size: 1.05rem;
+    }
+    .topnav-links { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .repo-badges { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .repo-badges a { display: inline-flex; line-height: 0; }
+    .repo-badges img { height: 20px; }
+    .btn {
+      appearance: none; border: 1px solid var(--line); background: color-mix(in srgb, var(--bg-card) 80%, white);
+      color: var(--ink); border-radius: 999px; padding: 7px 13px; font: inherit; font-size: .9rem;
+      cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+    }
+    .btn:hover { border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); }
+    .btn.active, .btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+    h1 {
+      font-family: "Source Serif 4", "Noto Sans SC", serif;
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      line-height: 1.15; letter-spacing: -0.03em; margin: 0 0 10px; font-weight: 600;
+    }
+    .lede { max-width: 46rem; color: var(--muted); margin: 0 0 8px; font-size: 1.02rem; }
+    .disclaimer { max-width: 46rem; color: var(--muted); margin: 0; font-size: .9rem; }
+    .stats { margin-top: 18px; display: flex; gap: 18px; flex-wrap: wrap; }
+    .stats b { font-variant-numeric: tabular-nums; font-size: 1.3rem; font-weight: 600; display: block; line-height: 1.1; }
+    .stats span { color: var(--muted); font-size: .85rem; }
+    .controls { padding: 14px 0 12px; }
+    .search {
+      width: 100%; border: 1px solid var(--line); background: var(--bg-card); color: var(--ink);
+      border-radius: 14px; padding: 12px 14px; font: inherit; margin-bottom: 12px;
+    }
+    .search:focus { outline: 2px solid color-mix(in srgb, var(--accent) 50%, transparent); border-color: var(--accent); }
+    .chips { display: flex; gap: 8px; flex-wrap: wrap; }
+    .chip {
+      appearance: none; border: 1px solid var(--line); background: var(--bg-card); color: var(--ink);
+      border-radius: 999px; padding: 6px 12px; font: inherit; font-size: .86rem; cursor: pointer;
+    }
+    .chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+    .layout { display: grid; grid-template-columns: minmax(280px, 420px) 1fr; gap: 18px; align-items: start; }
+    .listcol { min-width: 0; }
+    .empty { color: var(--muted); padding: 24px 4px; }
+    .list { display: grid; gap: 10px; }
+    article.card {
+      background: var(--bg-card); border: 1px solid var(--line); border-radius: 16px;
+      padding: 12px 14px 12px; box-shadow: var(--shadow);
+      border-left: 4px solid color-mix(in srgb, var(--accent) 45%, var(--line));
+      cursor: pointer; text-align: left; width: 100%; font: inherit; color: inherit;
+      display: grid; grid-template-columns: 76px 1fr; gap: 12px; align-items: start;
+    }
+    article.card.no-thumb { grid-template-columns: 1fr; }
+    article.card:hover { border-color: color-mix(in srgb, var(--accent) 40%, var(--line)); }
+    article.card.selected {
+      border-color: var(--accent);
+      border-left-color: var(--accent);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent);
+    }
+    .card-thumb {
+      width: 76px; height: 76px; border-radius: 10px; object-fit: cover;
+      background:
+        linear-gradient(45deg, #d7e3e2 25%, transparent 25%) 0 0 / 12px 12px,
+        linear-gradient(45deg, transparent 75%, #d7e3e2 75%) 0 0 / 12px 12px,
+        linear-gradient(45deg, transparent 25%, #d7e3e2 25%) 6px 6px / 12px 12px,
+        linear-gradient(45deg, #d7e3e2 75%, transparent 75%) 6px 6px / 12px 12px,
+        #eef4f4;
+    }
+    article.card h2 { font-size: 1.02rem; line-height: 1.35; margin: 0 0 6px; letter-spacing: -0.02em; font-weight: 650; }
+    article.card p { margin: 0 0 8px; color: #243834; font-size: .92rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .meta { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; color: var(--muted); font-size: .8rem; }
+    .cat, .badge {
+      display: inline-flex; align-items: center; border-radius: 999px; padding: 2px 8px;
+      background: color-mix(in srgb, var(--accent) 12%, var(--bg));
+      color: var(--accent-2); font-size: .74rem; font-weight: 500;
+    }
+    .badge.play { background: color-mix(in srgb, var(--accent) 22%, var(--bg)); }
+    .preview-pane {
+      position: sticky; top: 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      min-height: calc(100vh - 24px);
+      box-shadow: var(--shadow);
+      display: flex; flex-direction: column;
+      overflow: hidden;
+    }
+    .preview-bar {
+      display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;
+      padding: 14px 16px 10px; border-bottom: 1px solid var(--line);
+    }
+    .preview-bar h2 { font-size: 1.08rem; margin: 0 0 4px; letter-spacing: -0.02em; }
+    .preview-bar .sub { color: var(--muted); font-size: .86rem; margin: 0; }
+    .preview-actions { display: flex; gap: 8px; flex-wrap: wrap; flex-shrink: 0; }
+    .preview-stage {
+      background: #0e1a19; color: #e8f4f3; min-height: 280px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .preview-stage .placeholder {
+      margin: auto; padding: 28px; text-align: center; color: #c5d6d4; max-width: 28rem;
+    }
+    .preview-stage img.preview-img {
+      display: block; width: 100%; max-height: 58vh; object-fit: contain;
+      background:
+        linear-gradient(45deg, #1a2c2b 25%, transparent 25%) 0 0 / 16px 16px,
+        linear-gradient(45deg, transparent 75%, #1a2c2b 75%) 0 0 / 16px 16px,
+        linear-gradient(45deg, transparent 25%, #1a2c2b 25%) 8px 8px / 16px 16px,
+        linear-gradient(45deg, #1a2c2b 75%, transparent 75%) 8px 8px / 16px 16px,
+        #0e1a19;
+    }
+    .preview-notes { padding: 12px 16px 16px; color: var(--muted); font-size: .86rem; border-top: 1px solid var(--line); }
+    .preview-notes p { margin: 0 0 8px; }
+    .preview-notes p:last-child { margin-bottom: 0; }
+    .prompt-box {
+      margin: 0 0 12px; border: 1px solid var(--line); border-radius: 12px;
+      background: color-mix(in srgb, var(--accent) 6%, var(--bg-card)); overflow: hidden;
+    }
+    .prompt-head {
+      display: flex; justify-content: space-between; align-items: center; gap: 8px;
+      padding: 8px 10px 6px; font-size: .78rem; font-weight: 600; color: var(--accent-2);
+    }
+    .prompt-text {
+      margin: 0; padding: 0 10px 10px; white-space: pre-wrap; word-break: break-word;
+      font-size: .86rem; line-height: 1.55; color: var(--ink); max-height: 240px; overflow: auto;
+    }
+    .close-preview {
+      display: none; appearance: none; border: 1px solid var(--line); background: var(--bg-card);
+      border-radius: 999px; padding: 6px 11px; font: inherit; cursor: pointer;
+    }
+    footer { margin-top: 28px; color: var(--muted); font-size: .86rem; border-top: 1px solid var(--line); padding-top: 16px; }
+    footer p { margin: 0 0 8px; }
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; }
+      .preview-pane {
+        position: fixed; inset: 0; z-index: 30; border-radius: 0; min-height: 100%;
+        transform: translateY(100%); transition: transform .22s ease; top: 0;
+      }
+      .preview-pane.open { transform: translateY(0); }
+      .close-preview { display: inline-flex; }
+      .preview-stage { min-height: 40vh; }
+      .preview-stage img.preview-img { max-height: 50vh; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="topnav">
+        <div class="brand" data-i18n="title">Awesome Seedream 5.5</div>
+        <div class="topnav-links">
+          <button class="btn active" type="button" id="lang-zh" aria-pressed="true">中文</button>
+          <button class="btn" type="button" id="lang-en" aria-pressed="false">EN</button>
+          <a class="btn" href="https://github.com/xianyu110/awesome-seedream-5.5" rel="noopener">GitHub</a>
+          <div class="repo-badges">
+            <a href="https://github.com/xianyu110/awesome-seedream-5.5" rel="noopener" title="GitHub"><img src="https://img.shields.io/github/stars/xianyu110/awesome-seedream-5.5?style=social" alt="GitHub stars"></a>
+            <a href="https://github.com/xianyu110/awesome-seedream-5.5/fork" rel="noopener" title="Fork"><img src="https://img.shields.io/github/forks/xianyu110/awesome-seedream-5.5?style=social" alt="GitHub forks"></a>
+            <a href="https://github.com/xianyu110/awesome-seedream-5.5/blob/main/LICENSE" rel="noopener" title="License"><img src="https://img.shields.io/github/license/xianyu110/awesome-seedream-5.5?style=flat" alt="MIT license"></a>
+          </div>
+          <a class="btn" href="https://seed.bytedance.com/zh/seedream5_5" rel="noopener" data-i18n="official">官方介绍</a>
+        </div>
+      </div>
+      <h1 data-i18n="title">Awesome Seedream 5.5</h1>
+      <p class="lede" data-i18n="tag">社区整理的 Seedream 5.5 公开玩法与案例。点选一条，即可在右侧预览图片和来源中的提示词。</p>
+      <p class="disclaimer" data-i18n="disclaimer">本站点不是字节跳动、Seed、即梦、豆包或火山引擎的官方项目，也不代表其背书。</p>
+      <div class="stats">
+        <div><b id="stat-total">—</b><span data-i18n="stat-total">已核验案例</span></div>
+        <div><b id="stat-shown">—</b><span data-i18n="stat-shown">当前筛选</span></div>
+        <div><b id="stat-preview">—</b><span data-i18n="stat-preview">有图 / 有提示词</span></div>
+      </div>
+    </header>
+
+    <div class="controls">
+      <input class="search" id="q" type="search" data-i18n-placeholder="search" placeholder="搜索标题、作者、摘要、提示词或来源…">
+      <div class="chips" id="chips"></div>
+    </div>
+
+    <div class="layout">
+      <div class="listcol">
+        <div id="empty" class="empty" hidden></div>
+        <div class="list" id="list"></div>
+      </div>
+      <aside class="preview-pane" id="pane" aria-live="polite">
+        <div class="preview-bar">
+          <div>
+            <h2 id="pane-title" data-i18n="preview-empty-title">选择一条案例预览</h2>
+            <p class="sub" id="pane-sub" data-i18n="preview-empty-sub">有图的条目会在这里展示，来源里写明的提示词可以一键复制。</p>
+          </div>
+          <div class="preview-actions">
+            <a class="btn" id="btn-source" hidden target="_blank" rel="noopener"></a>
+            <button class="close-preview" type="button" id="btn-close" data-i18n="close">关闭</button>
+          </div>
+        </div>
+        <div class="preview-stage" id="stage"></div>
+        <div class="preview-notes" id="pane-notes" hidden></div>
+      </aside>
+    </div>
+
+    <footer>
+      <p data-i18n="footer-1">数据来自本仓库的 cases.json，数字与评价均摘自原出处，不是本站的独立验证。</p>
+      <p data-i18n="footer-2">MIT License。预览图存放在独立图床，提示词仅在原文明确给出时收录。本站不转载媒体文件到 GitHub 仓库。</p>
+    </footer>
+  </div>
+  <script>
+    const I18N = {
+      zh: {
+        title: "Awesome Seedream 5.5",
+        tag: "社区整理的 Seedream 5.5 公开玩法与案例。点选一条，即可在右侧预览图片和来源中的提示词。",
+        disclaimer: "本站点不是字节跳动、Seed、即梦、豆包或火山引擎的官方项目，也不代表其背书。",
+        official: "官方介绍",
+        "stat-total": "已核验案例",
+        "stat-shown": "当前筛选",
+        "stat-preview": "有图 / 有提示词",
+        search: "搜索标题、作者、摘要、提示词或来源…",
+        all: "全部",
+        previewable: "可预览",
+        hasImage: "有图",
+        hasPrompt: "有提示词",
+        source: "打开来源",
+        close: "关闭",
+        copy: "复制",
+        copied: "已复制",
+        promptLabel: "提示词",
+        empty: "没有符合条件的案例。",
+        "preview-empty-title": "选择一条案例预览",
+        "preview-empty-sub": "有图的条目会在这里展示，来源里写明的提示词可以一键复制。",
+        "no-embed": "这条案例没有可嵌入的预览图。请打开来源查看原文。",
+        "footer-1": "数据来自本仓库的 cases.json，数字与评价均摘自原出处，不是本站的独立验证。",
+        "footer-2": "MIT License。预览图存放在独立图床，提示词仅在原文明确给出时收录。本站不转载媒体文件到 GitHub 仓库。",
+        cats: {
+          "official-demo": "官方演示",
+          "multi-round-edit": "多轮编辑",
+          "transparent-assets": "透明素材",
+          "typography-layout": "文字与排版",
+          "photorealism": "真实质感",
+          "layer-decomposition": "图层拆分",
+          "reference-fusion": "多图融合",
+          "workflows": "工作流"
+        }
+      },
+      en: {
+        title: "Awesome Seedream 5.5",
+        tag: "A community catalog of public Seedream 5.5 play methods and cases. Select a case to preview its image and any sourced prompt.",
+        disclaimer: "This site is not an official ByteDance, Seed, Jimeng, Doubao, or Volcengine project and is not endorsed by them.",
+        official: "Official intro",
+        "stat-total": "Verified cases",
+        "stat-shown": "In this view",
+        "stat-preview": "With image / prompt",
+        search: "Search titles, authors, summaries, prompts, or sources…",
+        all: "All",
+        previewable: "Previewable",
+        hasImage: "Image",
+        hasPrompt: "Prompt",
+        source: "Open source",
+        close: "Close",
+        copy: "Copy",
+        copied: "Copied",
+        promptLabel: "Prompt",
+        empty: "No cases match this filter.",
+        "preview-empty-title": "Select a case to preview",
+        "preview-empty-sub": "Images appear here. Prompts can be copied when the original source provided them.",
+        "no-embed": "This case has no preview image. Open the source to read the original.",
+        "footer-1": "Data comes from cases.json in this repository. Figures and claims are from the original sources, not independently verified here.",
+        "footer-2": "MIT License. Preview images are hosted on a separate image bed. Prompts are included only when the source provided them. This site does not commit media files to the GitHub repository.",
+        cats: {
+          "official-demo": "Official demos",
+          "multi-round-edit": "Multi-round editing",
+          "transparent-assets": "Transparent assets",
+          "typography-layout": "Typography & layout",
+          "photorealism": "Photorealism",
+          "layer-decomposition": "Layer decomposition",
+          "reference-fusion": "Reference fusion",
+          "workflows": "Workflows"
+        }
+      }
+    };
+    const CAT_ORDER = ["official-demo", "multi-round-edit", "transparent-assets", "typography-layout", "photorealism", "layer-decomposition", "reference-fusion", "workflows"];
+    let lang = "zh";
+    let cat = "all";
+    let cases = [];
+    let selectedId = null;
+
+    const $ = (id) => document.getElementById(id);
+    const hasImage = (c) => !!(c.image_url);
+    const hasPrompt = (c) => !!(c.prompt && String(c.prompt).trim());
+    const hasPreview = (c) => hasImage(c) || hasPrompt(c);
+
+    function applyI18n() {
+      const t = I18N[lang];
+      document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+      document.title = t.title;
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        if (!$("pane-title").contains(el) || !selectedId) el.textContent = t[el.dataset.i18n];
+      });
+      const q = $("q");
+      if (q) q.placeholder = t.search;
+      $("lang-zh").classList.toggle("active", lang === "zh");
+      $("lang-en").classList.toggle("active", lang === "en");
+      $("lang-zh").setAttribute("aria-pressed", lang === "zh");
+      $("lang-en").setAttribute("aria-pressed", lang === "en");
+      $("btn-close").textContent = t.close;
+      renderChips();
+      render();
+      showSelected(false);
+    }
+
+    function renderChips() {
+      const t = I18N[lang];
+      const box = $("chips");
+      const keys = ["all", "previewable", ...CAT_ORDER];
+      box.innerHTML = "";
+      keys.forEach((key) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "chip";
+        b.setAttribute("aria-pressed", cat === key);
+        const count = key === "all" ? cases.length
+          : key === "previewable" ? cases.filter(hasPreview).length
+          : cases.filter(c => c.category === key).length;
+        const label = key === "all" ? t.all : key === "previewable" ? t.previewable : (t.cats[key] || key);
+        b.textContent = `${label} ${count}`;
+        b.addEventListener("click", () => { cat = key; applyI18n(); });
+        box.appendChild(b);
+      });
+    }
+
+    function filtered() {
+      const q = ($("q").value || "").trim().toLowerCase();
+      return cases.filter((c) => {
+        if (cat === "previewable" && !hasPreview(c)) return false;
+        if (cat !== "all" && cat !== "previewable" && c.category !== cat) return false;
+        if (!q) return true;
+        const blob = [c.title_zh, c.title_en, c.summary, c.author, c.source_url, c.notes, c.category, c.prompt].filter(Boolean).join(" ").toLowerCase();
+        return blob.includes(q);
+      });
+    }
+
+    function selectCase(id, fromUser) {
+      selectedId = id;
+      document.querySelectorAll("article.card").forEach((el) => {
+        el.classList.toggle("selected", el.dataset.id === id);
+      });
+      showSelected(fromUser);
+      if (fromUser && window.matchMedia("(max-width: 900px)").matches) {
+        $("pane").classList.add("open");
+      }
+    }
+
+    function render() {
+      const t = I18N[lang];
+      const rows = filtered();
+      $("stat-total").textContent = String(cases.length);
+      $("stat-shown").textContent = String(rows.length);
+      $("stat-preview").textContent = String(cases.filter(hasPreview).length);
+      const empty = $("empty");
+      const list = $("list");
+      list.innerHTML = "";
+      if (!rows.length) {
+        empty.hidden = false;
+        empty.textContent = t.empty;
+        return;
+      }
+      empty.hidden = true;
+      const frag = document.createDocumentFragment();
+      rows.forEach((c) => {
+        const art = document.createElement("article");
+        art.className = "card" + (c.id === selectedId ? " selected" : "") + (hasImage(c) ? "" : " no-thumb");
+        art.dataset.id = c.id;
+        art.tabIndex = 0;
+        art.setAttribute("role", "button");
+        if (hasImage(c)) {
+          const img = document.createElement("img");
+          img.className = "card-thumb";
+          img.src = c.image_url;
+          img.alt = "";
+          img.loading = "lazy";
+          art.appendChild(img);
+        }
+        const body = document.createElement("div");
+        const title = lang === "en" ? (c.title_en || c.title_zh) : (c.title_zh || c.title_en);
+        const h2 = document.createElement("h2");
+        h2.textContent = title;
+        body.appendChild(h2);
+        if (c.summary) {
+          const p = document.createElement("p");
+          p.textContent = c.summary;
+          body.appendChild(p);
+        }
+        const meta = document.createElement("div");
+        meta.className = "meta";
+        const catEl = document.createElement("span");
+        catEl.className = "cat";
+        catEl.textContent = t.cats[c.category] || c.category;
+        meta.appendChild(catEl);
+        if (hasImage(c)) {
+          const b = document.createElement("span");
+          b.className = "badge play";
+          b.textContent = t.hasImage;
+          meta.appendChild(b);
+        }
+        if (hasPrompt(c)) {
+          const b = document.createElement("span");
+          b.className = "badge";
+          b.textContent = t.hasPrompt;
+          meta.appendChild(b);
+        }
+        if (c.author) {
+          const a = document.createElement("span");
+          a.textContent = c.author;
+          meta.appendChild(a);
+        }
+        if (c.date) {
+          const d = document.createElement("span");
+          d.textContent = c.date;
+          meta.appendChild(d);
+        }
+        body.appendChild(meta);
+        art.appendChild(body);
+        art.addEventListener("click", () => selectCase(c.id, true));
+        art.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); selectCase(c.id, true); }
+        });
+        frag.appendChild(art);
+      });
+      list.appendChild(frag);
+      if (!selectedId || !rows.some((c) => c.id === selectedId)) {
+        const first = rows.find(hasPreview) || rows[0];
+        if (first) selectCase(first.id, false);
+      }
+    }
+
+    function showSelected(fromUser) {
+      const t = I18N[lang];
+      const c = cases.find((x) => x.id === selectedId);
+      const stage = $("stage");
+      const notes = $("pane-notes");
+      const btnSrc = $("btn-source");
+      stage.innerHTML = "";
+      if (!c) {
+        $("pane-title").textContent = t["preview-empty-title"];
+        $("pane-sub").textContent = t["preview-empty-sub"];
+        btnSrc.hidden = true;
+        notes.hidden = true;
+        stage.innerHTML = `<div class="placeholder">${t["preview-empty-sub"]}</div>`;
+        return;
+      }
+      const title = lang === "en" ? (c.title_en || c.title_zh) : (c.title_zh || c.title_en);
+      $("pane-title").textContent = title;
+      $("pane-sub").textContent = [c.author, c.date].filter(Boolean).join(" · ");
+      if (c.source_url) {
+        btnSrc.hidden = false;
+        btnSrc.href = c.source_url;
+        btnSrc.textContent = t.source;
+      } else {
+        btnSrc.hidden = true;
+      }
+      if (hasImage(c)) {
+        const img = document.createElement("img");
+        img.className = "preview-img";
+        img.src = c.image_url;
+        img.alt = title;
+        stage.appendChild(img);
+      } else {
+        stage.innerHTML = `<div class="placeholder">${t["no-embed"]}</div>`;
+      }
+      notes.innerHTML = "";
+      let hasNotes = false;
+      if (hasPrompt(c)) {
+        const box = document.createElement("div");
+        box.className = "prompt-box";
+        const head = document.createElement("div");
+        head.className = "prompt-head";
+        const lab = document.createElement("span");
+        lab.textContent = t.promptLabel;
+        const copyBtn = document.createElement("button");
+        copyBtn.type = "button";
+        copyBtn.className = "btn";
+        copyBtn.textContent = t.copy;
+        copyBtn.addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText(c.prompt);
+            copyBtn.textContent = t.copied;
+            setTimeout(() => { copyBtn.textContent = t.copy; }, 1500);
+          } catch (err) {
+            copyBtn.textContent = t.copy;
+          }
+        });
+        head.appendChild(lab);
+        head.appendChild(copyBtn);
+        const pre = document.createElement("pre");
+        pre.className = "prompt-text";
+        pre.textContent = c.prompt;
+        box.appendChild(head);
+        box.appendChild(pre);
+        notes.appendChild(box);
+        hasNotes = true;
+      }
+      if (c.summary) {
+        const p = document.createElement("p");
+        p.textContent = c.summary;
+        notes.appendChild(p);
+        hasNotes = true;
+      }
+      if (c.notes) {
+        const p = document.createElement("p");
+        p.textContent = c.notes;
+        notes.appendChild(p);
+        hasNotes = true;
+      }
+      notes.hidden = !hasNotes;
+    }
+
+    $("lang-zh").addEventListener("click", () => { lang = "zh"; applyI18n(); });
+    $("lang-en").addEventListener("click", () => { lang = "en"; applyI18n(); });
+    $("q").addEventListener("input", render);
+    $("btn-close").addEventListener("click", () => $("pane").classList.remove("open"));
+
+    fetch("./cases.json?v=images1")
+      .then((r) => {
+        if (!r.ok) throw new Error("cases.json " + r.status);
+        return r.json();
+      })
+      .then((data) => {
+        cases = Array.isArray(data) ? data : (data.cases || []);
+        applyI18n();
+      })
+      .catch((err) => {
+        $("empty").hidden = false;
+        $("empty").textContent = "Failed to load cases.json: " + err.message;
+      });
+  </script>
+</body>
+</html>

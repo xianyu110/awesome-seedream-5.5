@@ -4,6 +4,8 @@
 
 [简体中文](README.md) | [English](README.en.md)
 
+Browse the [GitHub Pages catalog](https://xianyu110.github.io/awesome-seedream-5.5/). Preview images are hosted on a custom image bed. Prompts appear on the catalog page when a source provided them; we do not invent missing prompts.
+
 This list currently has **80** verified cases (as of 2026-11-11, Asia/Shanghai). The catalog prefers fewer, better-sourced entries: every item has a source URL that was actually opened. We do not invent names, numbers, or URLs. Figures and judgments are restated from the sources and labeled as official or author claims, not as independent verification by this repository. Structured data: [`cases.json`](cases.json).
 
 ## What the model is

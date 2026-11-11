@@ -4,6 +4,8 @@
 
 [简体中文](README.md) | [English](README.en.md)
 
+浏览：[GitHub Pages 目录](https://xianyu110.github.io/awesome-seedream-5.5/)。预览图托管在自定义图床；来源中给出了提示词的案例会在目录页展示，未给出的不强行补写。
+
 当前收录 **80** 条已核验案例（截至 2026-11-11，Asia/Shanghai）。本清单宁缺毋滥：每条都有实际打开过的来源链接，不编造名称、数字或网址。数字与评价均按原文转述，并标明那是官方或作者自述，不是本仓库的独立验证结论。结构化数据见 [`cases.json`](cases.json)。
 
 ## 这是什么模型
