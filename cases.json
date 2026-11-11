@@ -10,7 +10,10 @@
     "date": "2026-11-09",
     "source_type": "official",
     "image_url": "https://upload.maynor1024.live/file/1794377395893_official-multiround-interior_interior.jpg",
-    "prompt": "逐步添加和替换家具、灯具与装饰，调整配色与摆放，保持空间透视和光影协调。"
+    "prompt": "逐步添加和替换家具、灯具与装饰，调整配色与摆放，保持空间透视和光影协调。",
+    "preview": {
+      "video_url": "https://lf3-static.bytednsdoc.com/obj/eden-cn/bdeh7uhpsuht/sd55-e01c-82a14c50.gif"
+    }
   },
   {
     "id": "official-multiround-person-styling",
@@ -23,7 +26,10 @@
     "date": "2026-11-09",
     "source_type": "official",
     "image_url": "https://upload.maynor1024.live/file/1794377402859_official-multiround-person-styling_person-styling.jpg",
-    "prompt": "多轮调整人物发型、眼镜、服装、背景与桌面道具，逐步呈现不同造型。"
+    "prompt": "多轮调整人物发型、眼镜、服装、背景与桌面道具，逐步呈现不同造型。",
+    "preview": {
+      "video_url": "https://lf3-static.bytednsdoc.com/obj/eden-cn/bdeh7uhpsuht/sd55-e02c-81f62174.gif"
+    }
   },
   {
     "id": "official-multiround-snake-game",
@@ -36,7 +42,10 @@
     "date": "2026-11-09",
     "source_type": "official",
     "image_url": "https://upload.maynor1024.live/file/1794377400306_official-multiround-snake-game_snake-game.jpg",
-    "prompt": "逐轮调整游戏画面中蛇的位置、长度与分数，保持显示器和界面布局一致。"
+    "prompt": "逐轮调整游戏画面中蛇的位置、长度与分数，保持显示器和界面布局一致。",
+    "preview": {
+      "video_url": "https://lf3-static.bytednsdoc.com/obj/eden-cn/bdeh7uhpsuht/sd55-e07c-c0792c79.gif"
+    }
   },
   {
     "id": "official-multiround-still-life",
@@ -49,7 +58,10 @@
     "date": "2026-11-09",
     "source_type": "official",
     "image_url": "https://upload.maynor1024.live/file/1794377404564_official-multiround-still-life_still-life.jpg",
-    "prompt": "逐步添加水果、花器与花枝，丰富静物构图，保持场景光影协调。"
+    "prompt": "逐步添加水果、花器与花枝，丰富静物构图，保持场景光影协调。",
+    "preview": {
+      "video_url": "https://lf3-static.bytednsdoc.com/obj/eden-cn/bdeh7uhpsuht/sd55-e04c-11c52018.gif"
+    }
   },
   {
     "id": "official-multiround-makeup-hair",
@@ -62,7 +74,10 @@
     "date": "2026-11-09",
     "source_type": "official",
     "image_url": "https://upload.maynor1024.live/file/1794377398734_official-multiround-makeup-hair_makeup-hair.jpg",
-    "prompt": "多轮调整人物发型、妆容与头部装饰，逐步呈现不同造型。"
+    "prompt": "多轮调整人物发型、妆容与头部装饰，逐步呈现不同造型。",
+    "preview": {
+      "video_url": "https://lf3-static.bytednsdoc.com/obj/eden-cn/bdeh7uhpsuht/sd55-e05c-3b26ab45.gif"
+    }
   },
   {
     "id": "official-multiround-guohua-florals",
@@ -75,7 +90,10 @@
     "date": "2026-11-09",
     "source_type": "official",
     "image_url": "https://upload.maynor1024.live/file/1794377398438_official-multiround-guohua-florals_guohua-florals.jpg",
-    "prompt": "逐步调整花器、枝叶与画面点缀，丰富国画构图。"
+    "prompt": "逐步调整花器、枝叶与画面点缀，丰富国画构图。",
+    "preview": {
+      "video_url": "https://lf3-static.bytednsdoc.com/obj/eden-cn/bdeh7uhpsuht/sd55-e06c-1d0fd793.gif"
+    }
   },
   {
     "id": "official-multiround-watch-face",
@@ -88,7 +106,10 @@
     "date": "2026-11-09",
     "source_type": "official",
     "image_url": "https://upload.maynor1024.live/file/1794377406380_official-multiround-watch-face_watch-face.jpg",
-    "prompt": "逐轮更新表盘上的时间、运动数据与图表，保持表盘布局和外观一致。"
+    "prompt": "逐轮更新表盘上的时间、运动数据与图表，保持表盘布局和外观一致。",
+    "preview": {
+      "video_url": "https://lf3-static.bytednsdoc.com/obj/eden-cn/bdeh7uhpsuht/sd55-e03c-b830455e.gif"
+    }
   },
   {
     "id": "official-100-round-person-edit",
@@ -100,7 +121,10 @@
     "author": "字节跳动 Seed 团队",
     "date": "2026-11-09",
     "source_type": "official",
-    "image_url": "https://upload.maynor1024.live/file/1794377399873_official-100-round-person-edit_100-round-person.jpg"
+    "image_url": "https://upload.maynor1024.live/file/1794377399873_official-100-round-person-edit_100-round-person.jpg",
+    "preview": {
+      "video_url": "https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mw8koj6k.mp4"
+    }
   },
   {
     "id": "official-rgba-running-girl",
@@ -113,7 +137,10 @@
     "date": "2026-11-09",
     "source_type": "official",
     "image_url": "https://upload.maynor1024.live/file/1794377407104_official-rgba-running-girl_running-girl.jpg",
-    "prompt": "生成一组女孩向右奔跑的连续动作图，每张为独立的透明底图层。"
+    "prompt": "生成一组女孩向右奔跑的连续动作图，每张为独立的透明底图层。",
+    "preview": {
+      "video_url": "https://lf3-static.bytednsdoc.com/obj/eden-cn/bdeh7uhpsuht/sd55-r01zc-f71df658.gif"
+    }
   },
   {
     "id": "official-rgba-flamingo",
@@ -126,7 +153,10 @@
     "date": "2026-11-09",
     "source_type": "official",
     "image_url": "https://upload.maynor1024.live/file/1794377407908_official-rgba-flamingo_flamingo.jpg",
-    "prompt": "提取画面中的火烈鸟，输出为独立的 RGBA 透明图层。"
+    "prompt": "提取画面中的火烈鸟，输出为独立的 RGBA 透明图层。",
+    "preview": {
+      "video_url": "https://lf3-static.bytednsdoc.com/obj/eden-cn/bdeh7uhpsuht/sd55-r03zc-34532bd0.gif"
+    }
   },
   {
     "id": "official-rgba-cartoon-stickers",
@@ -139,7 +169,10 @@
     "date": "2026-11-09",
     "source_type": "official",
     "image_url": "https://upload.maynor1024.live/file/1794377410053_official-rgba-cartoon-stickers_cartoon-stickers.jpg",
-    "prompt": "生成两组卡通贴纸：一组由海洋元素和卡通小猫组成，另一组由动物和植物组成。两组贴纸元素以外的区域均为透明背景。"
+    "prompt": "生成两组卡通贴纸：一组由海洋元素和卡通小猫组成，另一组由动物和植物组成。两组贴纸元素以外的区域均为透明背景。",
+    "preview": {
+      "video_url": "https://lf3-static.bytednsdoc.com/obj/eden-cn/bdeh7uhpsuht/sd55-r02zc-0e366699.gif"
+    }
   },
   {
     "id": "official-rgba-yarn-lettering",
@@ -153,7 +186,10 @@
     "source_type": "official",
     "notes": "官方博文中的「文字与材质融合的透明素材」与产品页这一字标示例同属一类能力，不重复建条。",
     "image_url": "https://upload.maynor1024.live/file/1794377404578_official-rgba-yarn-lettering_yarn-lettering.jpg",
-    "prompt": "参考图中的质感和写法，生成“Seedream 5.5”：圆润饱满的无衬线字母，以宝蓝与湖蓝毛线交替缠绕，呈现纤维、绒毛和侧向投影。输出 16:9 横幅，文字以外的区域透明。"
+    "prompt": "参考图中的质感和写法，生成“Seedream 5.5”：圆润饱满的无衬线字母，以宝蓝与湖蓝毛线交替缠绕，呈现纤维、绒毛和侧向投影。输出 16:9 横幅，文字以外的区域透明。",
+    "preview": {
+      "video_url": "https://lf3-static.bytednsdoc.com/obj/eden-cn/bdeh7uhpsuht/sd55-r04zc-5368ca8b.gif"
+    }
   },
   {
     "id": "official-rgba-blue-plush-characters",
@@ -166,7 +202,10 @@
     "date": "2026-11-09",
     "source_type": "official",
     "image_url": "https://upload.maynor1024.live/file/1794377404158_official-rgba-blue-plush-characters_blue-plush.jpg",
-    "prompt": "生成一个圆润、大眼睛、短四肢的蓝色毛绒 3D 卡通角色，表情俏皮。延续这一风格，再设计三个造型和表情各异的角色。将四个角色分别输出为透明底图片，使它们能像拼图一样拆分、组合。"
+    "prompt": "生成一个圆润、大眼睛、短四肢的蓝色毛绒 3D 卡通角色，表情俏皮。延续这一风格，再设计三个造型和表情各异的角色。将四个角色分别输出为透明底图片，使它们能像拼图一样拆分、组合。",
+    "preview": {
+      "video_url": "https://lf3-static.bytednsdoc.com/obj/eden-cn/bdeh7uhpsuht/sd55-r05zc-d14ae933.gif"
+    }
   },
   {
     "id": "official-rgba-snowy-owl-closeups",
@@ -179,7 +218,10 @@
     "date": "2026-11-09",
     "source_type": "official",
     "image_url": "https://upload.maynor1024.live/file/1794377408844_official-rgba-snowy-owl-closeups_snowy-owl-closeups.jpg",
-    "prompt": "生成雪鸮白色细密羽毛与积雪接触处的圆形微距特写。再放大参考图右侧较小的雪鸮脚，生成浅灰底的圆形微距特写。两张图均配 3 像素深灰细边框，圆外透明。"
+    "prompt": "生成雪鸮白色细密羽毛与积雪接触处的圆形微距特写。再放大参考图右侧较小的雪鸮脚，生成浅灰底的圆形微距特写。两张图均配 3 像素深灰细边框，圆外透明。",
+    "preview": {
+      "video_url": "https://lf3-static.bytednsdoc.com/obj/eden-cn/bdeh7uhpsuht/sd55-r06zc-3f8ef942.gif"
+    }
   },
   {
     "id": "official-rgba-snowy-owl-wings",
@@ -191,7 +233,10 @@
     "author": "字节跳动 Seed 团队",
     "date": "2026-11-09",
     "source_type": "official",
-    "image_url": "https://upload.maynor1024.live/file/1794377408128_official-rgba-snowy-owl-wings_snowy-owl-wings.jpg"
+    "image_url": "https://upload.maynor1024.live/file/1794377408128_official-rgba-snowy-owl-wings_snowy-owl-wings.jpg",
+    "preview": {
+      "video_url": "https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mw8l4jdt.mp4"
+    }
   },
   {
     "id": "official-rgba-character-reuse",
@@ -203,7 +248,10 @@
     "author": "字节跳动 Seed 团队",
     "date": "2026-11-09",
     "source_type": "official",
-    "image_url": "https://upload.maynor1024.live/file/1794377406416_official-rgba-character-reuse_character-reuse.jpg"
+    "image_url": "https://upload.maynor1024.live/file/1794377406416_official-rgba-character-reuse_character-reuse.jpg",
+    "preview": {
+      "video_url": "https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mw8l6qlq.mp4"
+    }
   },
   {
     "id": "official-photoreal-night-bar-cat",
